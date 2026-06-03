@@ -2,35 +2,47 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   .am { font-family: Georgia, 'Times New Roman', serif; background: #0a0a09; color: #f0ece3; }
-  .am-nav { display: flex; justify-content: space-between; align-items: center; padding: 36px 52px; border-bottom: 1px solid #333330; }
-  .am-logo { font-size: 13px; letter-spacing: 0.24em; color: #f0ece3; font-weight: 400; }
-  .am-navlinks { display: flex; gap: 40px; }
-  .am-navlinks a { font-size: 12px; letter-spacing: 0.18em; color: #888880; text-decoration: none; font-family: 'Helvetica Neue', Arial, sans-serif; transition: color 0.2s; }
+  .am-nav { display: flex; justify-content: space-between; align-items: center; padding: 28px 24px; border-bottom: 1px solid #2a2a27; }
+  .am-logo { font-size: 12px; letter-spacing: 0.22em; color: #f0ece3; font-weight: 400; }
+  .am-navlinks { display: flex; gap: 20px; }
+  .am-navlinks a { font-size: 10px; letter-spacing: 0.14em; color: #888880; text-decoration: none; font-family: 'Helvetica Neue', Arial, sans-serif; }
   .am-navlinks a.active { color: #f0ece3; }
-  .am-body { padding: 88px 52px 72px; }
-  .am-eyebrow { font-size: 11px; letter-spacing: 0.28em; color: #666662; font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0 0 32px; }
-  .am-hero-title { font-size: 58px; font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: #f0ece3; margin: 0 0 36px; }
+  .am-body { padding: 56px 24px 56px; }
+  .am-eyebrow { font-size: 10px; letter-spacing: 0.24em; color: #666662; font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0 0 24px; }
+  .am-hero-title { font-size: clamp(34px, 8vw, 58px); font-weight: 400; line-height: 1.08; letter-spacing: -0.02em; color: #f0ece3; margin: 0 0 28px; }
   .am-hero-title em { font-style: italic; color: #c9b990; }
-  .am-hero-sub { font-size: 16px; line-height: 1.85; color: #b0aca4; max-width: 500px; font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0 0 72px; }
-  .am-divider { border: none; border-top: 1px solid #2a2a27; margin: 0 0 64px; }
-  .am-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #2a2a27; margin-bottom: 1px; }
-  .am-card { background: #0a0a09; padding: 44px; }
-  .am-card-label { font-size: 10px; letter-spacing: 0.26em; color: #666662; font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0 0 28px; }
+  .am-hero-sub { font-size: 15px; line-height: 1.85; color: #b0aca4; font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0 0 56px; }
+  .am-divider { border: none; border-top: 1px solid #2a2a27; margin: 0 0 48px; }
+  .am-grid { display: flex; flex-direction: column; gap: 1px; background: #2a2a27; margin-bottom: 1px; }
+  .am-card { background: #0a0a09; padding: 36px 24px; }
+  .am-card-label { font-size: 10px; letter-spacing: 0.24em; color: #666662; font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0 0 24px; }
   .am-card-text { font-size: 15px; line-height: 1.9; color: #c8c4bc; font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0 0 16px; }
-  .am-card-quote { border-left: 2px solid #c9b990; padding-left: 20px; margin-top: 32px; }
+  .am-card-quote { border-left: 2px solid #c9b990; padding-left: 18px; margin-top: 28px; }
   .am-card-quote p { font-size: 15px; font-style: italic; color: #c9b990; font-family: Georgia, serif; line-height: 1.7; }
-  .am-svc { display: flex; justify-content: space-between; align-items: baseline; padding: 22px 0; border-bottom: 1px solid #222220; }
+  .am-svc { display: flex; justify-content: space-between; align-items: baseline; padding: 20px 0; border-bottom: 1px solid #222220; gap: 12px; }
   .am-svc:first-of-type { border-top: 1px solid #222220; margin-top: 8px; }
   .am-svc:last-child { border-bottom: none; padding-bottom: 0; }
-  .am-svc-name { font-size: 16px; font-weight: 400; color: #f0ece3; font-family: Georgia, serif; }
-  .am-svc-desc { font-size: 12px; color: #666662; font-family: 'Helvetica Neue', Arial, sans-serif; }
+  .am-svc-name { font-size: 15px; color: #f0ece3; font-family: Georgia, serif; flex-shrink: 0; }
+  .am-svc-desc { font-size: 12px; color: #666662; font-family: 'Helvetica Neue', Arial, sans-serif; text-align: right; }
   .am-stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #2a2a27; margin-bottom: 1px; }
-  .am-stat { background: #0a0a09; padding: 40px 44px; }
-  .am-stat-num { font-size: 42px; font-weight: 400; color: #f0ece3; margin: 0 0 10px; letter-spacing: -0.02em; line-height: 1; }
-  .am-stat-label { font-size: 11px; color: #666662; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.16em; }
-  .am-footer { padding: 32px 52px; border-top: 1px solid #2a2a27; display: flex; justify-content: space-between; align-items: center; }
-  .am-footer span { font-size: 12px; color: #555552; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.08em; }
-  .am-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #c9b990; margin-right: 10px; vertical-align: middle; }
+  .am-stat { background: #0a0a09; padding: 28px 20px; }
+  .am-stat-num { font-size: clamp(28px, 6vw, 42px); font-weight: 400; color: #f0ece3; margin: 0 0 8px; letter-spacing: -0.02em; line-height: 1; }
+  .am-stat-label { font-size: 10px; color: #666662; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.12em; }
+  .am-footer { padding: 28px 24px; border-top: 1px solid #2a2a27; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+  .am-footer span { font-size: 11px; color: #555552; font-family: 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.08em; }
+  .am-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #c9b990; margin-right: 8px; vertical-align: middle; }
+
+  @media (min-width: 600px) {
+    .am-nav { padding: 36px 52px; }
+    .am-navlinks { gap: 40px; }
+    .am-navlinks a { font-size: 12px; letter-spacing: 0.18em; }
+    .am-body { padding: 88px 52px 72px; }
+    .am-hero-sub { max-width: 500px; }
+    .am-grid { flex-direction: row; }
+    .am-grid .am-card { flex: 1; padding: 44px; }
+    .am-stat { padding: 40px 44px; }
+    .am-footer { padding: 32px 52px; }
+  }
 </style>
 
 <div class="am">
@@ -79,7 +91,7 @@
       </div>
       <div class="am-stat">
         <p class="am-stat-num">İzmir</p>
-        <p class="am-stat-label">KARŞIYAKA MERKEZLİ</p>
+        <p class="am-stat-label">KARŞIYAKA</p>
       </div>
     </div>
   </div>
